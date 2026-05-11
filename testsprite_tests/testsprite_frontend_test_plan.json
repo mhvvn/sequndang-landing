@@ -1,0 +1,1080 @@
+[
+  {
+    "id": "TC001",
+    "title": "Register for a free trial with valid details",
+    "description": "A prospective customer can submit the trial registration form successfully and see confirmation after entering valid information.",
+    "category": "Navigation Bar",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation bar trial call to action"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required business field with a valid store name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required email field with a valid email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required phone field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required address field with a valid address"
+      },
+      {
+        "type": "action",
+        "description": "Submit the trial registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trial form is no longer ready for submission"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Jump from the hero to the trial form",
+    "description": "A prospective store owner can use the hero call to action to reach the trial registration form and start signup.",
+    "category": "Hero Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the primary trial call to action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trial registration form is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Navigate from hero to trial registration and submit a valid request",
+    "description": "A prospective customer can move from the homepage hero to the trial form and submit a valid free-trial request, resulting in a success confirmation.",
+    "category": "Trial Registration Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero call to action for starting a free trial"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a valid email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the company field with a valid company name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the phone field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the address field with a valid address"
+      },
+      {
+        "type": "action",
+        "description": "Submit the trial registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trial registration form is no longer prompting for required details"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Submit a valid free trial request",
+    "description": "A prospective customer can complete the trial form with valid business details and see a success confirmation after submission.",
+    "category": "Trial Registration Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the trial registration section"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the store name field with Sequndang Mart"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the owner name field with Budi Santoso"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the WhatsApp number field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Select a business type"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the city or regency field with Bandung"
+      },
+      {
+        "type": "action",
+        "description": "Select a customer package"
+      },
+      {
+        "type": "action",
+        "description": "Submit the trial registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trial request is shown as submitted"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Jump from the navbar to the trial form",
+    "description": "A visitor can use the navigation bar trial call to action to reach the registration form without losing their place on the page.",
+    "category": "Navigation Bar",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation bar trial call to action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trial registration form is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Use the navbar to jump to key sections",
+    "description": "A visitor can use the sticky navigation bar to jump to major sections and keep browsing the one-page site efficiently.",
+    "category": "Navigation Bar",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll down the page"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link for the features section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the features section is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Show required-field validation on empty trial form",
+    "description": "Submitting the trial form without required details shows validation messages and prevents completion.",
+    "category": "Trial Registration Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the trial registration section"
+      },
+      {
+        "type": "action",
+        "description": "Submit the trial registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify validation errors are visible for the required fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is not visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Start trial registration from a pricing plan CTA",
+    "description": "A visitor can click a pricing plan call to action and reach the trial registration form to continue sign-up.",
+    "category": "Pricing Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the pricing section"
+      },
+      {
+        "type": "action",
+        "description": "Click a pricing plan call to action for starting a trial"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trial registration section is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trial registration form is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Compare pricing plans and use a plan CTA",
+    "description": "A store manager can review the pricing plans, recognize the highlighted Pro plan, and continue to trial signup from a plan call to action.",
+    "category": "Pricing Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the pricing section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the pricing plan comparison is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Pro plan is highlighted as most popular"
+      },
+      {
+        "type": "action",
+        "description": "Click a pricing plan call to action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trial registration form is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Reject an invalid email in the trial form",
+    "description": "A user entering an invalid email format sees an email validation error and cannot submit the trial request.",
+    "category": "Trial Registration Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the trial registration section"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the store name field with Sequndang Mart"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the owner name field with Budi Santoso"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with invalid-email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the WhatsApp number field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Select a business type"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the city or regency field with Bandung"
+      },
+      {
+        "type": "action",
+        "description": "Submit the trial registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an email validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is not visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "See email format validation on trial signup",
+    "description": "A visitor can enter an invalid email address in the trial form and see email validation before submission succeeds.",
+    "category": "Navigation Bar",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation bar trial call to action"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required name field with a valid full name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required business field with a valid store name"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required email field with an invalid email address"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required phone field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the required address field with a valid address"
+      },
+      {
+        "type": "action",
+        "description": "Submit the trial registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify email validation errors are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Compare pricing plans and identify the popular option",
+    "description": "A visitor can review the pricing plans and see that the Pro plan is highlighted as the popular choice.",
+    "category": "Pricing Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the pricing section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify pricing plan cards are visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Pro plan is marked as the popular option"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Jump from the hero to the features section",
+    "description": "A visitor can use the secondary hero call to action to reach the features section and continue evaluating the product.",
+    "category": "Hero Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the secondary features call to action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the features section is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Open the features section from the homepage navigation",
+    "description": "A visitor can jump to the features section from the homepage and view the main POS capability cards.",
+    "category": "Features Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link for the features section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the features section is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify feature cards are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "View the pricing comparison and Pro badge",
+    "description": "A visitor can review the pricing plans and confirm the Pro plan is highlighted as the most popular option.",
+    "category": "Pricing Plans",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the pricing section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the pricing plans are visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Pro plan is highlighted as the most popular option"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Review the how-it-works walkthrough",
+    "description": "A visitor can scroll to the how-it-works section and see the numbered onboarding steps that explain the product flow.",
+    "category": "How It Works Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the how-it-works section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the how-it-works section is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the numbered setup steps are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC017",
+    "title": "See the headline and product value in the hero",
+    "description": "A visitor can view the opening messaging and understand the product value proposition from the hero section.",
+    "category": "Hero Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero headline is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero subheadline is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC018",
+    "title": "Review trust indicators in social proof",
+    "description": "A prospective buyer can see usage statistics or other credibility indicators that support evaluating the product.",
+    "category": "Social Proof Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the social proof section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify trust indicators are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify usage statistics are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC019",
+    "title": "Open and close FAQ answers",
+    "description": "A visitor can expand an FAQ question to read its answer and collapse it again before continuing evaluation.",
+    "category": "FAQ Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the FAQ section"
+      },
+      {
+        "type": "action",
+        "description": "Expand an FAQ question"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the answer for the selected question is visible"
+      },
+      {
+        "type": "action",
+        "description": "Collapse the same FAQ question"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the answer for the selected question is hidden"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC020",
+    "title": "Use the mobile menu to navigate the page",
+    "description": "A mobile visitor can open the hamburger menu, jump to a section, and continue using the sticky navigation experience.",
+    "category": "Mobile Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the mobile navigation menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link for the pricing section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the pricing section is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile navigation menu can be closed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC021",
+    "title": "Open the mobile navigation and reach a section",
+    "description": "On a small viewport, a visitor can open the mobile menu and use it to navigate to a page section.",
+    "category": "Mobile Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Resize the viewport to a mobile size"
+      },
+      {
+        "type": "action",
+        "description": "Open the hamburger menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to the features section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the features section is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile navigation is no longer blocking the page"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC022",
+    "title": "Expand and collapse an FAQ answer",
+    "description": "A visitor can open an FAQ item to get an answer and close it again while comparing the product.",
+    "category": "FAQ Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the FAQ section"
+      },
+      {
+        "type": "action",
+        "description": "Expand an FAQ item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an FAQ answer is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Collapse the same FAQ item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the FAQ answer is hidden"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC023",
+    "title": "Use FAQ to open and close an answer",
+    "description": "A visitor can expand a FAQ item to read the answer and then collapse it again to keep scanning the page.",
+    "category": "FAQ Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the FAQ section"
+      },
+      {
+        "type": "action",
+        "description": "Expand a FAQ item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected FAQ answer is visible"
+      },
+      {
+        "type": "action",
+        "description": "Collapse the same FAQ item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the FAQ answer is hidden"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC024",
+    "title": "Open the page and use the footer navigation to reach a section",
+    "description": "This verifies that a visitor can use the footer navigation to move to an in-page section and continue browsing the landing page.",
+    "category": "Footer",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the footer"
+      },
+      {
+        "type": "action",
+        "description": "Click a footer navigation link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page moves to the linked section"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC025",
+    "title": "Open and close the mobile navigation menu",
+    "description": "A mobile visitor can open the hamburger menu, view the navigation links, and close the menu again.",
+    "category": "Navigation Bar",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the mobile navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile navigation links are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Close the mobile navigation menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile navigation links are hidden"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC026",
+    "title": "Use contact links for support",
+    "description": "A visitor can open the support email and WhatsApp contact links from the contact section.",
+    "category": "Contact Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Click the email contact link"
+      },
+      {
+        "type": "action",
+        "description": "Click the WhatsApp contact link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the support contact links are available"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the contact section remains visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC027",
+    "title": "Use support links from the contact section",
+    "description": "A visitor looking for help can open the contact section and access support via email or WhatsApp links.",
+    "category": "Contact Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify contact support links are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Click the email support link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the email link is available for contact"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC028",
+    "title": "Reach support through contact links",
+    "description": "A visitor can use the contact section to open support options for email and WhatsApp.",
+    "category": "Contact Section",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Click the email support link"
+      },
+      {
+        "type": "action",
+        "description": "Click the WhatsApp support link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify support contact options are available"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the contact section remains accessible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC029",
+    "title": "Open footer links for product and legal information",
+    "description": "A visitor can use the footer to access product and legal navigation destinations from the landing page.",
+    "category": "Footer Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the footer"
+      },
+      {
+        "type": "action",
+        "description": "Click a footer navigation link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the linked destination content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify footer navigation remains available"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC030",
+    "title": "Reject an overlong trial message",
+    "description": "A user entering a message that exceeds the allowed length sees a length validation error and cannot submit.",
+    "category": "Trial Registration Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the trial registration section"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the store name field with Sequndang Mart"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the owner name field with Budi Santoso"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the WhatsApp number field with a valid phone number"
+      },
+      {
+        "type": "action",
+        "description": "Select a business type"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the city or regency field with Bandung"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the additional message field with an overlong message"
+      },
+      {
+        "type": "action",
+        "description": "Submit the trial registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a message length validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a success confirmation is not visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC031",
+    "title": "Open a social profile from the footer",
+    "description": "This verifies that a visitor can open a social media profile from the footer to learn more about the product outside the landing page.",
+    "category": "Footer",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the footer"
+      },
+      {
+        "type": "action",
+        "description": "Click a social media link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the corresponding social profile opens"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC032",
+    "title": "Show validation errors when trial registration is submitted empty",
+    "description": "A visitor submitting the trial form without required details sees validation errors and cannot complete registration.",
+    "category": "Trial Registration Form",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero call to action for starting a free trial"
+      },
+      {
+        "type": "action",
+        "description": "Submit the trial registration form without entering details"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify required field validation errors are visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trial registration is not submitted"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC033",
+    "title": "Use footer navigation and review the copyright year",
+    "description": "A visitor can use the footer for additional site navigation and confirm the current copyright year is shown.",
+    "category": "Footer",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the footer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify footer navigation links are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the copyright year is displayed"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC034",
+    "title": "View the footer copyright information",
+    "description": "This verifies that a visitor can find the footer copyright notice and year for basic site trust and ownership information.",
+    "category": "Footer",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the footer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a copyright notice is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the current year is visible"
+      }
+    ],
+    "priority": "Low"
+  }
+]
