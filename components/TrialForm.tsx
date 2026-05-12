@@ -140,12 +140,11 @@ export default function TrialForm() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_DASHBOARD_URL}/api/trial-requests`,
+        `/api/proxy/trial-requests`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'X-Landing-Key': process.env.NEXT_PUBLIC_LANDING_API_KEY ?? '',
           },
           body: JSON.stringify(formData),
         }
