@@ -1278,6 +1278,43 @@ img {
   margin-top: 4px;
 }
 
+.contact-social {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.contact-social-label {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+.contact-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.contact-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.contact-social-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light, rgba(79, 70, 229, 0.06));
+}
+
 /* ─── Footer ─────────────────────────────────────────────────── */
 .footer {
   background: #0a1128;

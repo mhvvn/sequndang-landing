@@ -169,7 +169,7 @@ The landing page is **single-page** with anchor-scroll navigation. Section order
 | Property | Spec |
 |----------|------|
 | Logo | Left-aligned, Sequndang brand mark |
-| Nav links | Anchor scroll: Fitur (`#fitur`), FAQ (`#faq`), Kontak (`#kontak`), Daftar Trial (`#daftar`) |
+| Nav links | Anchor scroll: Fitur (`#fitur`), Harga (`#harga`), FAQ (`#faq`), Kontak (`#kontak`) |
 | CTA button | "Daftar Trial Gratis" — right side, primary color, scrolls to `#daftar` |
 | Behavior | Sticky on scroll |
 | Mobile | Hamburger menu with collapsible drawer |
@@ -218,12 +218,14 @@ Numbered steps with icons and connecting arrows:
 
 ### 6.6 `Pricing`
 
-Two plan cards:
+Four plan cards — section anchor `#harga`:
 
 | Plan | Price | Highlights |
 |------|-------|------------|
-| **Starter** | Rp 99.000/month | Up to 2 cashiers, 500 products |
-| **Pro** | Rp 199.000/month | Unlimited cashiers, all features, priority support |
+| **Trial** | Free | All features for 14 days, no credit card required |
+| **Basic** | Rp 150.000/month | 1 active cashier, up to 500 products |
+| **Pro** | Rp 350.000/month | Unlimited cashiers, all features, priority support |
+| **Enterprise** | Rp 1.000.000/month | Multi-store, high-priority SLA, dedicated account manager |
 
 - "Paling Populer" badge on Pro plan
 - Each card has a "Coba Gratis 14 Hari" button → scroll to `#daftar`
@@ -251,9 +253,9 @@ Accordion component — minimum 10 questions:
 | Field | Value |
 |-------|-------|
 | Email | support@sequndang.com |
-| WhatsApp | +62-xxx-xxxx-xxxx (direct link to wa.me) |
+| WhatsApp | +62 812-3456-7890 (direct link to wa.me) |
 | Operating hours | Monday–Saturday, 08:00–17:00 WIB |
-| Social media | Instagram, Facebook icons with links |
+| Social media | Instagram (`instagram.com/sequndang`) and Facebook (`facebook.com/sequndang`) icon buttons with links |
 
 ### 6.9 `Footer`
 
@@ -280,10 +282,13 @@ Subtitle: *"Tim kami akan menghubungi Anda dalam 1×24 jam kerja."*
 | `email` | Alamat Email | email | ✅ | Valid email format, lowercase |
 | `phone` | Nomor WhatsApp | tel | ✅ | 10–15 digits, starts with `08` or `+62` |
 | `businessType` | Jenis Usaha | select | ✅ | See allowed values below |
-| `city` | Kota / Kabupaten | text | ✅ | Max 100 chars |
+| `city` | Kota / Kabupaten | text | ✅ | Min 2 chars, max 100 |
+| `kecamatan` | Kecamatan | text | ❌ | Max 100 chars |
+| `desa` | Desa / Kelurahan | text | ❌ | Max 100 chars |
+| `alamatLengkap` | Alamat Lengkap | text | ❌ | Max 200 chars |
 | `employeeCount` | Jumlah Kasir yang Dibutuhkan | select | ✅ | `1` / `2-5` / `6-10` / `>10` |
-| `planInterest` | Paket yang Diminati | select | ❌ | `Starter` / `Pro` / `Belum Tahu` |
-| `referral` | Dari mana tahu Sequndang? | select | ❌ | `Google` / `Media Sosial` / `Teman` / `Lainnya` |
+| `planInterest` | Paket yang Diminati | select | ❌ | `Trial` / `Basic` / `Pro` / `Enterprise` / `Belum Tahu` |
+| `referral` | Dari mana tahu Sequndang? | select | ❌ | `Google` / `Media Sosial` / `Teman / Rekan` / `Lainnya` |
 | `message` | Pesan / Keterangan Tambahan | textarea | ❌ | Max 500 chars |
 | `website` | *(hidden honeypot)* | text | — | Must be empty; if filled, silently discard |
 
@@ -345,6 +350,9 @@ X-Landing-Key: <LANDING_API_KEY>
   "phone":         "081234567890",
   "businessType":  "Warung / Toko Kelontong",
   "city":          "Bandung",
+  "kecamatan":     "Coblong",
+  "desa":          "Lebak Siliwangi",
+  "alamatLengkap": "Jl. Contoh No. 12, RT 03/RW 05",
   "employeeCount": "2-5",
   "planInterest":  "Pro",
   "referral":      "Google",
@@ -373,6 +381,9 @@ X-Landing-Key: <LANDING_API_KEY>
 | `phone` | required, string, 10–15 digits |
 | `businessType` | required, must be one of the predefined values |
 | `city` | required, string, 2–100 chars |
+| `kecamatan` | optional, max 100 chars |
+| `desa` | optional, max 100 chars |
+| `alamatLengkap` | optional, max 200 chars |
 | `employeeCount` | required, one of: `"1"`, `"2-5"`, `"6-10"`, `">10"` |
 | `planInterest` | optional |
 | `referral` | optional |
@@ -504,12 +515,11 @@ new ──▶ processing ──▶ done
 |-------|-----------|--------|
 | Framework | **Next.js 15** (App Router) | Consistent with ecosystem; SSR for SEO |
 | Language | **TypeScript** | Type safety across components and API |
-| Styling | **Tailwind CSS** | Utility-first; rapid consistent design |
-| Animation | **Framer Motion** | Smooth scroll-reveal, counter animations |
-| Form | **React Hook Form + Zod** | Robust validation, high performance |
+| Styling | **Custom CSS** (globals.css) | Full control, no external CSS framework dependency |
+| Form | **React `useState`** + custom validation | Lightweight, no extra dependencies |
 | Icons | **Lucide React** | Consistent with POS & Dashboard |
 | Font | **Inter / Plus Jakarta Sans** | Professional, highly readable |
-| Deploy | **Vercel / Netlify** | Zero-config, global CDN |
+| Deploy | **Vercel** | Zero-config, global CDN, managed env vars |
 | Port (dev) | **3002** | Avoids conflict with POS (3000) and Dashboard (3001) |
 
 ---
@@ -519,21 +529,19 @@ new ──▶ processing ──▶ done
 ### Landing Page (`.env.local`)
 
 ```env
-# Dashboard API base URL
-NEXT_PUBLIC_DASHBOARD_API_URL=https://dashboard.sequndang.com
+# Dashboard API base URL — accessed SERVER-SIDE only (never sent to browser)
+# Can be plain IP:port since it's called from Vercel server, not from browser
+DASHBOARD_INTERNAL_URL=http://your-vps-ip:3001
 
 # Shared secret sent in X-Landing-Key header
-LANDING_API_KEY=<secret-key-shared-with-dashboard>
-
-# Contact info (used in Contact section and form success message)
-NEXT_PUBLIC_WHATSAPP_NUMBER=6281234567890
-NEXT_PUBLIC_EMAIL=support@sequndang.com
+# NO NEXT_PUBLIC_ prefix — must not be exposed to client bundle
+LANDING_API_KEY_SECRET=your-api-key-here
 ```
 
 ### Dashboard (`.env` — additions)
 
 ```env
-# Must match LANDING_API_KEY above
+# Must match LANDING_API_KEY_SECRET above
 LANDING_API_KEY=<secret-key-same-as-landing>
 ```
 
@@ -585,7 +593,7 @@ The following changes must be made to `sequndang-dashboard` as part of this feat
 | **Trial Request** | Store registration data submitted by a prospective user via the landing page |
 | **Honeypot** | Hidden form field used to detect automated bot submissions |
 | **Landing API Key** | Secret key authenticating requests from the landing page to the Dashboard API |
-| **Plan** | Subscription tier (Starter / Pro) offered on the landing page |
+| **Plan** | Subscription tier (Trial / Basic / Pro / Enterprise) offered on the landing page |
 | **Social Proof** | Statistics/numbers demonstrating trust from existing users |
 | **CTA** | Call to Action — button or link prompting user action |
 | **SSR** | Server-Side Rendering — page rendered on the server for SEO |

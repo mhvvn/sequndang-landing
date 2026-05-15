@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, Clock } from 'lucide-react';
+import { Mail, MessageCircle, Clock, Instagram, Facebook } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -48,6 +48,33 @@ export default function Contact() {
             <div className="contact-card-label">Jam Operasional</div>
             <div className="contact-card-value">Senin – Sabtu</div>
             <div className="contact-card-sub">08.00 – 17.00 WIB</div>
+          </div>
+        </div>
+
+        {/* Social media links */}
+        <div className="contact-social">
+          <p className="contact-social-label">Ikuti kami di media sosial</p>
+          <div className="contact-social-links">
+            <a
+              href="https://instagram.com/sequndang"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-social-btn"
+              aria-label="Instagram Sequndang"
+            >
+              <Instagram size={20} />
+              <span>Instagram</span>
+            </a>
+            <a
+              href="https://facebook.com/sequndang"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-social-btn"
+              aria-label="Facebook Sequndang"
+            >
+              <Facebook size={20} />
+              <span>Facebook</span>
+            </a>
           </div>
         </div>
       </div>

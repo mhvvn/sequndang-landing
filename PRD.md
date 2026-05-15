@@ -124,8 +124,8 @@ Halaman landing bersifat **single-page** dengan navigasi anchor scroll. Urutan s
 ### 4.1 Navbar
 
 - Logo Sequndang (kiri)
-- Menu navigasi anchor: Fitur, FAQ, Kontak, Daftar Trial
-- Tombol CTA "Daftar Trial Gratis" (kanan, primary color)
+- Menu navigasi anchor: Fitur, **Harga**, FAQ, Kontak
+- Tombol CTA "Daftar Trial Gratis" (kanan, primary color) → anchor `#daftar`
 - Sticky saat scroll
 - Mobile: hamburger menu collapsible
 
@@ -171,12 +171,14 @@ Tampilkan 3 langkah dengan ikon bernomor dan panah:
 
 ### 4.6 Paket & Harga
 
-Tampilkan minimal 2 kartu paket (data aktual dari `platform_config` di Dashboard):
+Tampilkan 4 kartu paket dengan anchor section `#harga`:
 
 | Plan | Harga | Highlight |
-|------|-------|-----------|
-| **Starter** | Rp 99.000/bulan | Hingga 2 kasir, 500 produk |
-| **Pro** | Rp 199.000/bulan | Kasir tidak terbatas, semua fitur, prioritas support |
+|------|-------|----------|
+| **Trial** | Gratis | Akses semua fitur selama 14 hari, tanpa kartu kredit |
+| **Basic** | Rp 150.000/bulan | 1 kasir aktif, hingga 500 produk |
+| **Pro** | Rp 350.000/bulan | Kasir tidak terbatas, semua fitur, prioritas support |
+| **Enterprise** | Rp 1.000.000/bulan | Multi-toko, SLA prioritas tinggi, account manager |
 
 - Badge "Paling Populer" pada plan Pro
 - Tombol "Coba Gratis 14 Hari" pada setiap kartu → scroll ke #daftar
@@ -202,10 +204,9 @@ Komponen accordion, minimal 8 pertanyaan:
 ### 4.8 Informasi Kontak
 
 - **Email:** support@sequndang.com
-- **WhatsApp:** +62-xxx-xxxx-xxxx (tombol langsung ke wa.me)
+- **WhatsApp:** +62 812-3456-7890 (tombol langsung ke wa.me)
 - **Jam Operasional:** Senin–Sabtu, 08.00–17.00 WIB
-- **Alamat:** (opsional, jika ada kantor fisik)
-- Ikon sosial media: Instagram, Facebook
+- Ikon + tautan sosial media: **Instagram** (`instagram.com/sequndang`), **Facebook** (`facebook.com/sequndang`)
 
 ---
 
@@ -224,11 +225,15 @@ Section dengan ID `#daftar`, latar berbeda (warna primer light), judul "Daftar T
 | `email` | Alamat Email | email | ✅ | Format email valid, lowercase |
 | `phone` | Nomor WhatsApp | tel | ✅ | 10–15 digit, diawali 08 atau +62 |
 | `businessType` | Jenis Usaha | select | ✅ | Pilihan dropdown (lihat di bawah) |
-| `city` | Kota / Kabupaten | text | ✅ | Max 100 karakter |
+| `city` | Kota / Kabupaten | text | ✅ | Min 2 karakter, max 100 |
+| `kecamatan` | Kecamatan | text | ❌ | Max 100 karakter |
+| `desa` | Desa / Kelurahan | text | ❌ | Max 100 karakter |
+| `alamatLengkap` | Alamat Lengkap | text | ❌ | Max 200 karakter |
 | `employeeCount` | Jumlah Kasir yang Dibutuhkan | select | ✅ | 1 / 2–5 / 6–10 / > 10 |
-| `planInterest` | Paket yang Diminati | select | ❌ | Starter / Pro / Belum Tahu |
-| `referral` | Dari mana tahu Sequndang? | select | ❌ | Google / Media Sosial / Teman / Lainnya |
+| `planInterest` | Paket yang Diminati | select | ❌ | Trial / Basic / Pro / Enterprise / Belum Tahu |
+| `referral` | Dari mana tahu Sequndang? | select | ❌ | Google / Media Sosial / Teman / Rekan / Lainnya |
 | `message` | Pesan / Keterangan Tambahan | textarea | ❌ | Max 500 karakter, placeholder: "Ceritakan kebutuhan toko Anda..." |
+| `website` | *(honeypot tersembunyi)* | text | — | Harus kosong; jika terisi, request dibuang tanpa error |
 
 **Opsi `businessType`:**
 - Warung / Toko Kelontong
@@ -305,6 +310,9 @@ Request tidak memerlukan autentikasi (public endpoint), namun dilindungi:
   "phone":          "081234567890",
   "businessType":   "Warung / Toko Kelontong",
   "city":           "Bandung",
+  "kecamatan":      "Coblong",
+  "desa":           "Lebak Siliwangi",
+  "alamatLengkap":  "Jl. Contoh No. 12, RT 03/RW 05",
   "employeeCount":  "2-5",
   "planInterest":   "Pro",
   "referral":       "Google",
@@ -447,13 +455,13 @@ Body: `{ "status": "processing", "adminNotes": "..." }`
 
 | Layer | Teknologi | Alasan |
 |-------|-----------|--------|
-| Framework | **Next.js 16** (App Router) | Konsisten dengan ekosistem, SSR untuk SEO |
-| Styling | **Tailwind CSS** | Utility-first, konsistensi desain cepat |
-| Animasi | **Framer Motion** | Smooth scroll reveal, counter animation |
-| Form | **React Hook Form + Zod** | Validasi robust, performa tinggi |
+| Framework | **Next.js 15** (App Router) | Konsisten dengan ekosistem, SSR untuk SEO |
+| Styling | **Custom CSS** (globals.css) | Kontrol penuh, tidak ada dependency eksternal |
+| Form | **React `useState`** + validasi custom | Ringan, tanpa dependency tambahan |
 | Icons | **Lucide React** | Konsisten dengan POS & Dashboard |
 | Font | **Inter / Plus Jakarta Sans** | Profesional, readable |
-| Deploy | **Vercel / Netlify** | Zero-config, CDN global |
+| Deploy | **Vercel** | Zero-config, CDN global, env vars terkelola |
+| Port (dev) | **3002** | Tidak konflik dengan POS (3000) dan Dashboard (3001) |
 
 ### 9.2 Tambahan di Dashboard (`sequndang-dashboard`)
 
@@ -545,10 +553,11 @@ sequndang-landing/          ← project baru (Next.js)
 ### 11.2 Environment Variables (Landing Page)
 
 ```env
-NEXT_PUBLIC_DASHBOARD_API_URL=https://dashboard.sequndang.com
-LANDING_API_KEY=<secret-key-shared-with-dashboard>
-NEXT_PUBLIC_WHATSAPP_NUMBER=6281234567890
-NEXT_PUBLIC_EMAIL=support@sequndang.com
+# URL dashboard diakses dari server (proxy), TIDAK dikirim ke browser
+DASHBOARD_INTERNAL_URL=http://your-vps-ip:3001
+
+# API key rahasia — TANPA prefix NEXT_PUBLIC_ agar tidak bocor ke client
+LANDING_API_KEY_SECRET=your-api-key-here
 ```
 
 ### 11.3 Environment Variables (Dashboard — tambahan)
@@ -574,7 +583,7 @@ prisma/migrations/
 | **Trial Request** | Data pendaftaran toko baru dari calon pengguna melalui landing page |
 | **Honeypot** | Field form tersembunyi untuk mendeteksi bot otomatis |
 | **Landing API Key** | Secret key untuk mengautentikasi request dari landing page ke Dashboard API |
-| **Plan** | Paket langganan (Starter / Pro) yang ditawarkan di landing page |
+| **Plan** | Paket langganan (Trial / Basic / Pro / Enterprise) yang ditawarkan di landing page |
 | **Social Proof** | Statistik/angka yang menunjukkan kepercayaan pengguna existing |
 | **CTA** | Call to Action — tombol atau link yang mendorong tindakan pengguna |
 | **SSR** | Server-Side Rendering — halaman di-render di server untuk SEO |
